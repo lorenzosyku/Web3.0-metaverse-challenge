@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useMoralis } from "react-moralis"
+import { useMoralis } from "react-moralis";
 
 function Login() {
 
@@ -19,7 +19,7 @@ function Login() {
         <button onClick={authenticate} className="bg-yellow-500 rounded-lg p-5 animate-pulse font-bold">Login into the METAVERSE</button>
       </div>
       <div className="w-full h-screen">
-        <Image src='https://links.papareact.com/55n'
+        <Image src={'/triangolo.jpg'}
           layout='fill'
           objectFit="cover"
         />
