@@ -12,7 +12,7 @@ export default function Home() {
   if(!isAuthenticated) return <Login/>
 
   return (
-    <div className="h-screen overflow-y-scroll bg-gradient-to-b from-black to-fuchsia-900 overflow-hidden">
+    <div className="h-screen overflow-y-scroll bg-gradient-to-t from-indigo-900 to-fuchsia-900 overflow-hidden">
       <Head>
         <title>Web 3.0 Messaging App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -22,10 +22,6 @@ export default function Home() {
         <Header />
         <Messages />
       </div>
-      {/*header */}
-
-      <button onClick={logout}>Logout</button>
-      
     </div>
   )
 }

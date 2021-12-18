@@ -1,6 +1,8 @@
 import { useMoralis } from "react-moralis"
 import Avatar from "./Avatar";
 import TimeAgo from "timeago-react"
+import { motion } from "framer-motion";
+
 
 function Message({ message }) {
   const {user} = useMoralis();
@@ -16,11 +18,21 @@ function Message({ message }) {
       }`}>
         <Avatar username={message.get('username')}/>
       </div>
-        <div className={`flex space-x-4 p-3 rounded-lg ${
-          isUserMessage ? 'rounded-br-none bg-pink-300' : "rounded-bl-none bg-blue-300"
+        <motion.div
+        initial={{
+          opacity: 0,
+          y: -15
+        }}
+        animate={{
+          opacity: 1,
+          y: 0
+        }}
+        transition={{type: 'spring', duration: 1.8}}
+        className={`flex space-x-4 p-3 rounded-lg ${
+          isUserMessage ? 'rounded-br-none bg-gradient-to-r from-pink-500 to-indigo-200 backdrop-filter backdrop-blur-xl bg-opacity-40 ' : "rounded-bl-none bg-gradient-to-l from-indigo-500 to-indigo-200 backdrop-filter backdrop-blur-xl bg-opacity-40"
         }`}>
           <p>{message.get('message')}</p>
-        </div>
+        </motion.div>
         <TimeAgo 
           datetime={message.createdAt}
           className={`text-[10px] italic text-gray-400 ${
