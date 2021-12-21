@@ -5,7 +5,7 @@ import SendMessage from "./SendMessage";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const MINS_DURATION = 15;
+const MINS_DURATION = 4500;
 
 function Messages() {
   const {user} = useMoralis();

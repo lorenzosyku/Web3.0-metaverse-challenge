@@ -9,13 +9,6 @@ function Login() {
   return (
     <div className="bg-black relative text-white">
       <div className="flex flex-col absolute z-10 w-full items-center justify-center h-4/6 space-y-12">
-        
-        <Image 
-          src="https://links.papareact.com/3pi"
-          height={200}
-          width={200}
-          className=" object-cover rounded-full"
-        />
 
         <motion.div 
           className="relative group"

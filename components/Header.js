@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useMoralis } from "react-moralis";
 import Avatar from "./Avatar";
-import ChangeUsername from "./ChangeUsername";
-//import Profile from "./Profile";
+import Dropmenu from "./Dropmenu";
+
+
 
 function Header() {
   const { user, data} = useMoralis();
@@ -56,8 +57,7 @@ function Header() {
             {user.get('ethAddress')}
 
           </motion.h2>
-
-          <ChangeUsername />
+          <Dropmenu logoutOnPress/>
           
         </div>
       </div>

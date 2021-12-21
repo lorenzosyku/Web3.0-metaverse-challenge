@@ -1,4 +1,5 @@
-import { useMoralis } from "react-moralis"
+import { useMoralis } from "react-moralis";
+import { Menu } from "@headlessui/react";
 
 function ChangeUsername() {
   const { setUserData, isUserUpdating, userError, user } = useMoralis();
@@ -13,16 +14,28 @@ function ChangeUsername() {
     setUserData({
       username,
     })
-  }
+  };
+
   return (
-    <div className="relative-group text-sm absolute top-5 right-5">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur-xl opacity-75 hover:cursor-pointer group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-      <button 
-        disabled={isUserUpdating} 
-        className="relative rounded-lg p-2 text-fuchsia-200 bg-transparent group-hover:text-purple-300 transition duration-200 "
-        onClick={setUserName}
-      >
-      Change your username</button>
+    <div 
+      disabled={isUserUpdating} 
+      onClick={setUserName}
+    > 
+      
+        <Menu.Item>
+          {({active})=>(
+            <a href="#" className={`flex items-center px-4 py-2 text-sm       
+            ${active ? "bg-indigo-500 text-white" : "text-gray-700"}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" class={`h-5 w-5 mr-3 
+                ${active ? "text-white" : "text-gray-400"}`} aria-hidden="true" fill="none" viewBox="0 0 24 24"stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 000-7-7z" />
+              </svg>
+              Username
+              </a>
+          )}
+                  
+        </Menu.Item>
+     
     </div>
   )
 }
