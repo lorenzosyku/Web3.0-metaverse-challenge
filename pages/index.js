@@ -3,6 +3,7 @@ import Login from '../components/Login';
 import { useMoralis } from 'react-moralis'
 import Header from '../components/Header';
 import Messages from '../components/Messages';
+import Swap from '../components/Swap';
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <div className="max-w-screen-2xl mx-auto">
         <Header />
         <Messages />
+        <Swap />
       </div>
     </div>
   )
